@@ -25,6 +25,8 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+			gkGreeting();
+
 		});
 
 	// Browser fixes.
@@ -337,5 +339,22 @@
 							}, 275);
 
 						});
+	//Greeting function for stretch goal
+		function gkGreeting() {
+			var d = new Date();
+			var time = d.getHours();
+			// console.log(d)
+			// console.log(time)
+
+			if (time < 10) {
+				$("#greeting").text("Good Morning!");
+			}
+			if (time < 18) {
+				$("#greeting").text("Good Afternoon!");
+			} 
+			else {
+				$("#greeting").text("Good Evening!");
+			}
+	}
 
 })(jQuery);
